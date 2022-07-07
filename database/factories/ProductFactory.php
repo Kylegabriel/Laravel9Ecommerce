@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use App\Models\Product;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
@@ -15,9 +16,12 @@ class ProductFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
+    protected $model = Product::class;
+
     public function definition()
     {
-        $product_name = $this->faker->unique()->words($nb=2,$asText=true);
+        $product_name = $this->faker->unique()->words($nb=4,$asText=true);
         $slug = Str::slug($product_name);
         return [
             //

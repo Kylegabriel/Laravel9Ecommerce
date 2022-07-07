@@ -1,3 +1,4 @@
+<div> <!-- <div> ... (all your existing html) and closed it </div> at the end. to fix the pagination -->
 <!--main area-->
     <main id="main" class="main-site left-sidebar">
 
@@ -65,7 +66,7 @@
                                 <div class="product product-style-3 equal-elem ">
                                     <div class="product-thumnail">
                                         <a href="detail.html" title="{{ $product->name }}">
-                                            <figure><img src="assets/images/products/{{ $product->image }}" alt="{{ $product->name }}"></figure>
+                                            <figure><img src="/assets/images/products/{{ $product->image }}" alt="{{ $product->name }}"></figure>
                                         </a>
                                     </div>
                                     <div class="product-info">
@@ -77,17 +78,10 @@
                             </li>
                             @endforeach
                         </ul>
-
                     </div>
 
                     <div class="wrap-pagination-info">
-                        <ul class="page-numbers">
-                            <li><span class="page-number-item current" >1</span></li>
-                            <li><a class="page-number-item" href="#" >2</a></li>
-                            <li><a class="page-number-item" href="#" >3</a></li>
-                            <li><a class="page-number-item next-link" href="#" >Next</a></li>
-                        </ul>
-                        <p class="result-count">Showing 1-8 of 12 result</p>
+                        {{ $products->links() }}
                     </div>
                 </div><!--end main products area-->
 
@@ -268,3 +262,4 @@
 
     </main>
     <!--main area-->
+</div> <!-- <div> ... (all your existing html) and closed it </div> at the end. to fix the pagination -->

@@ -9,7 +9,7 @@ use App\Models\Product;
 class ShopComponent extends Component
 {
     use WithPagination;
-    
+
     public function render()
     {
 
